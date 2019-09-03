@@ -1,0 +1,10 @@
+# -*- coding: utf-8 -*-
+
+POSTGRES
+---------
+
+
+# PG Database size
+
+psql Restored_17_June_2019 gibil
+SELECT pg_size_pretty( pg_database_size('Restored_17_June_2019') );

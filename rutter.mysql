@@ -1,0 +1,6 @@
+# -*- coding: utf-8 -*-
+
+# Reset password
+sudo /etc/init.d/mysql stop
+
+

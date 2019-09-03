@@ -1,0 +1,6 @@
+# -*- coding: utf-8 -*-
+
+# To configure SEL, to authorize ssh connection on port 1024
+semanage port -a -t ssh_port_t -p tcp 1024
+semanage port -l | grep ssh
+

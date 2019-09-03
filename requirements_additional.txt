@@ -1,0 +1,5 @@
+pysftp
+numpy
+num2words
+pandas
+

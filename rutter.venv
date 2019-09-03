@@ -1,0 +1,16 @@
+# -*- coding: utf-8 -*-
+
+Virtual Env
+------------
+
+
+17 Jun 2019
+To repair the broken Odoo Virtual Env
+--------------------------------------
+gfind ~/Virtualenvs/Odoo9-min/ -type l -xtype l 
+
+gfind ~/Virtualenvs/Odoo9-min/ -type l -xtype l -delete
+
+virtualenv --python=/usr/bin/python2.7 ./Odoo9-min/
+
+

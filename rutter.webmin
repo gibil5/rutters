@@ -1,0 +1,24 @@
+# -*- coding: utf-8 -*-
+
+WEBMIN
+--------
+
+# Add Repo
+vi /etc/yum.repos.d/webmin.repo
+[Webmin]
+name=Webmin Distribution Neutral
+#baseurl=http://download.webmin.com/download/yum
+mirrorlist=http://download.webmin.com/download/yum/mirrorlist
+enabled=1
+
+# Get Key
+wget http://www.webmin.com/jcameron-key.asc
+rpm --import jcameron-key.asc
+
+# Install
+yum install webmin
+
+https://192.168.1.46:1024
+
+https://190.187.27.153:1024
+

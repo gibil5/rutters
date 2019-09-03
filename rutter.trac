@@ -1,0 +1,73 @@
+# -*- coding: utf-8 -*-
+TRAC
+-----
+
+
+21 Jun 2019
+To install Trac on Centos
+-------------------------
+yum install trac
+#yum install mod_python # Does not work  
+
+mkdir -p /var/www/svn/foobar
+svnadmin create  --fs-type fsfs /var/www/svn/foo
+
+mkdir -p  /var/www/trac
+trac-admin /var/www/trac/foobar initenv
+
+chown -R apache:apache /var/www/trac/foobar
+chown -R apache:apache /var/www/svn/foobar
+
+vim /etc/httpd/conf.d/trac.conf
+
+service httpd reload
+systemctl status httpd.service
+systemctl start httpd.service
+
+vim /etc/httpd/logs/error_log 
+
+Test Trac
+http://157.230.146.12/trac
+If not working then enable SELINUX permissive mode
+sestatus
+setenforce 0
+service httpd reload
+
+
+htpasswd -c /somewhere/trac.htpasswd admin
+htpasswd -c /var/www/trac/foobar/conf/trac.htpasswd admin
+htpasswd /var/www/trac/foobar/conf/trac.htpasswd gibil
+
+
+# Add components
+trac-admin /var/www/trac/foobar/ component add marketing
+trac-admin /var/www/trac/foobar/ component add product
+trac-admin /var/www/trac/foobar/ component add sale
+trac-admin /var/www/trac/foobar/ component add system 
+trac-admin /var/www/trac/foobar/ component add test
+
+trac-admin /var/www/trac/foobar/ component add management 
+
+
+
+# Install mod_python from 3rd party 
+wget http://repo.iotti.biz/CentOS/7/noarch/lux-release-7-1.noarch.rpm
+rpm -Uvh lux-release*rpm
+yum install mod_python
+
+
+
+
+# To Install Apache 
+--------------------
+yum install httpd
+systemctl start httpd
+systemctl status httpd
+curl -4 icanhazip.com
+http://157.230.146.12/
+
+
+
+
+
+
