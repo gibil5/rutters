@@ -17,8 +17,6 @@ rpm --import jcameron-key.asc
 
 # Install
 yum install webmin
-
 https://192.168.1.46:1024
-
 https://190.187.27.153:1024
 
