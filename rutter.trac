@@ -43,6 +43,7 @@ htpasswd -c /var/www/trac/foobar/conf/trac.htpasswd admin
 htpasswd /var/www/trac/foobar/conf/trac.htpasswd gibil
 
 
+
 # To Install Apache 
 --------------------
 yum install httpd
