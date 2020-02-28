@@ -1,0 +1,252 @@
+
+#
+#		Rutter - Rails
+#
+# 	Created:	23 Dec 2019
+#		Last:			28 Feb 2020
+#
+
+
+# ------------------------------------------------------------------------------
+# 	Models
+# ------------------------------------------------------------------------------
+- Data validation
+
+- Data relationships
+
+bin/rails g model Topic title:string
+bin/rails g migration add_topic_reference_to_blogs topic:references
+
+
+# ------------------------------------------------------------------------------
+# 	Routes
+# ------------------------------------------------------------------------------
+
+- Namespacing
+
+- Globbing
+
+- Dynamic routing
+
+- rake routes
+
+
+
+# ------------------------------------------------------------------------------
+# 	Slugs
+# ------------------------------------------------------------------------------
+More SEO friendly.
+
+
+
+# ------------------------------------------------------------------------------
+# 	Enums
+# ------------------------------------------------------------------------------
+
+- For state machines
+
+Creates database scopes
+Created a state machine, db query scopes, custom methods
+
+Blog.last.published!
+Blog.published.count
+
+
+# ------------------------------------------------------------------------------
+# 	Log Levels
+# ------------------------------------------------------------------------------
+
+Debug
+Diagnostic information for developers and system administrators,
+including database calls or inspecting object attributes.
+This is the most verbose log level.
+
+Info
+Useful information about normal application operations such as services starting or stopping.
+
+Warn
+Operations that an application can easily recover from but should be addressed soon.
+This could include using an out-of-date gem or retrying an operation.
+
+Error
+Errors that cause an operation to fail (e.g., missing data or files) but not the application.
+The issue should be resolved soon, but the application can log the exception and continue running.
+
+Fatal
+Errors that cause the application to crash and should be addressed immediately to prevent further data loss.
+Unknown: messages that are not classified by any other level but should be logged.
+
+
+
+# ------------------------------------------------------------------------------
+# 	Debugging
+# ------------------------------------------------------------------------------
+byebug
+
+
+
+
+# ------------------------------------------------------------------------------
+# 	Ruby
+# ------------------------------------------------------------------------------
+
+brew install rbenv ruby-build
+
+echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+
+source ~/.bash_profile
+
+rbenv install 2.6.5
+
+rbenv global 2.6.5
+
+rbenv global 2.6.3
+
+
+
+
+
+
+
+# ------------------------------------------------------------------------------
+# 	PCM
+# ------------------------------------------------------------------------------
+
+Rails
+-----
+gem install rails --version=6.0.0 --no-document
+
+# For Libro app
+gem install bundler:2.1.2
+
+rake db:migrate
+
+
+rbenv install 2.6.3
+
+:export MACOSX_DEPLOYMENT_TARGET=10.10
+
+brew install beanstalkd
+
+brew install memcached
+ps aux |grep memc
+
+gem install foreman
+
+bundle exec rails s
+
+cat Procfile
+
+
+Each time
+---------
+brew services start memcached
+
+foreman start
+
+
+
+
+
+
+
+# ------------------------------------------------------------------------------
+# 	Libro de Reclamaciones
+# ------------------------------------------------------------------------------
+
+Install - Rails Book
+---------
+Ruby, Bryant Copeland et al
+
+ruby -e "$(curl -fsSL \ https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+
+
+Database
+---------
+bundle exec rails db:create db:seed
+rake db:migrate
+
+
+
+
+
+Run Rails
+----------
+
+brew install memcached
+
+bundle exec cap -T
+
+
+vim Procfile
+
+W:
+yarn && ./bin/webpack-dev-server
+
+R:
+bundle exec spring rails server -b 0.0.0.0 -p 3000
+
+B:
+bundle exec backburner -q default:2,uploader:4,mailers:1
+
+
+foreman start
+
+
+No !!! - Do not deploy !
+--------------------------
+# bundle exec cap production deploy - No !
+
+
+Issues - Solved
+----------------
+- Version ruby
+
+- Yarn - Dependency management.
+	Depends on Node
+
+	brew install yarn
+		brew install node
+			13.5
+
+
+
+
+
+# ------------------------------------------------------------------------------
+# 	Postgres
+# ------------------------------------------------------------------------------
+
+Launch Postgres
+pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
+
+Connect
+psql -p5432 -d "postgres"
+
+Create
+
+CREATE DATABASE libro_de_reclamaciones_development OWNER postgres;
+CREATE DATABASE libro_de_reclamaciones_test OWNER postgres;
+CREATE DATABASE libro_de_reclamaciones_development_2 OWNER postgres;
+CREATE DATABASE libro_de_reclamaciones_test_2 OWNER postgres;
+
+\l
+\q
+
+
+
+
+
+
+# ------------------------------------------------------------------------------
+# 	Production
+# ------------------------------------------------------------------------------
+
+Ubuntu
+-------
+ssh -v  -i ./alpha.pem ubuntu@reclamos.servicios.gob.pe
+
+curl -v https://ws5.pide.gob.pe/Rest/Reniec/Consultar?nuDniConsulta=09817194&nuDniUsuario=10218692&nuRucUsuario=20168999926&password=10218692
+
+curl -v https://ws5.pide.gob.pe/Rest/Reniec/Consultar?nuDniConsulta=09817194&nuDniUsuario=10218692&nuRucUsuario=20168999926&password=10218692

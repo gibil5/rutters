@@ -1,0 +1,20 @@
+#
+#   Ruby
+#
+#   Created:  10 Feb 2020
+#   Last up:  id.
+
+
+
+Ternary conditional
+---------------------
+condition ? if_true : if_false
+q.category.depth == 2 ? 'yes' : 'no'
+
+
+question.category&.depth == 2 : question.category&.to_s,
+question.category&.parent&.root? ? nil : question.category&.parent.to_s,
+question.category&.parent&.root? ? nil : question.category&.parent.to_s,
+
+
+Saved working directory and index state WIP on master: 5574905 ver respuesta final del reclamo

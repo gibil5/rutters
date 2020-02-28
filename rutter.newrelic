@@ -1,0 +1,30 @@
+
+#   New Relic
+
+
+sudo rpm -Uvh http://yum.newrelic.com/pub/newrelic/el5/x86_64/newrelic-repo-5-3.noarch.rpm
+
+sudo yum install newrelic-php5
+
+
+
+Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-NewRelic
+Importing GPG key 0x548C16BF:
+ Userid     : "New Relic <support@newrelic.com>"
+ Fingerprint: b60a 3ec9 bc01 3b9c 2379 0ec8 b31b 29e5 548c 16bf
+ Package    : newrelic-repo-5-3.noarch (installed)
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-NewRelic
+
+
+
+ New Relic is now installed on your system. Congratulations!
+
+1. Set newrelic.appname in your newrelic.ini file.
+
+2. Restart your web server. This will fix most reporting issues and
+    load the agent's new features and bug fixes.
+
+If you have questions or comments, go to http://support.newrelic.com.
+
+
+f1c2cf33401bc8238b1d3d7d386462826a64ff2d

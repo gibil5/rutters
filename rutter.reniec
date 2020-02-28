@@ -1,0 +1,157 @@
+#
+#   Reniec
+#
+#   Created: 	27 Dec 2019
+#   Last:		id.
+
+
+
+# -----------------------------------------------------------------------------
+# On Ubuntu
+# -----------------------------------------------------------------------------
+
+Works ! - With back lashes or quotes.
+
+curl -L -v -s https://ws5.pide.gob.pe/Rest/Reniec/ActualizarCredencial\?credencialAnterior\=43465568\&credencialNueva\=43465568\&nuDni\=43465568\&nuRuc\=20168999926
+
+curl -L -v -s "https://ws5.pide.gob.pe/Rest/Reniec/ActualizarCredencial?credencialAnterior=43465568&credencialNueva=43465568&nuDni=43465568&nuRuc=20168999926"
+
+
+Fails !
+
+curl -L -v -s https://ws5.pide.gob.pe/Rest/Reniec/ActualizarCredencial?credencialAnterior=43465568&credencialNueva=43465568&nuDni=43465568&nuRuc=20168999926
+
+
+
+
+
+
+
+
+# -----------------------------------------------------------------------------
+#	Urls
+# -----------------------------------------------------------------------------
+
+https://ws5.pide.gob.pe/services/ReniecConsultaDni?wsdl
+
+https://ws5.pide.gob.pe/services/ReniecConsultaDni
+
+
+
+
+# -----------------------------------------------------------------------------
+#	Acceso
+# -----------------------------------------------------------------------------
+
+Usuarios- PCM
+--------------
+
+Jeanette Noborikawa Nonogawa
+JEANETTE NOBORIKAWA NONOGAWA
+10218692
+
+
+Melissa Donayre Méndez
+MELISSA ANTONIETA DONAYRE MENDEZ
+43465568
+
+
+Ruc
+-----
+PRESIDENCIA DEL CONSEJO DE MINISTROS
+20168999926
+
+
+
+
+
+
+# -----------------------------------------------------------------------------
+#	Interface REST
+# -----------------------------------------------------------------------------
+
+
+REST
+------
+https://ws5.pide.gob.pe/Rest/Reniec/ActualizarCredencial?credencialAnterior=&credencialNueva=&nuDni=40529119&nuRuc=20168999926&out=json
+https://ws5.pide.gob.pe/Rest/Reniec/ActualizarCredencial?credencialAnterior=&credencialNueva=&nuDni=40529119&nuRuc=20168999926
+
+
+
+Update Credentials
+-------------------
+https://ws5.pide.gob.pe/Rest/Reniec/ActualizarCredencial?credencialAnterior=10218692&credencialNueva=10218692&nuDni=10218692&nuRuc=20168999926
+https://ws5.pide.gob.pe/Rest/Reniec/ActualizarCredencial?credencialAnterior=43465568&credencialNueva=43465568&nuDni=43465568&nuRuc=20168999926
+
+
+
+Request DNI
+--------------
+https://ws5.pide.gob.pe/Rest/Reniec/Consultar?nuDniConsulta=09817194&nuDniUsuario=10218692&nuRucUsuario=20168999926&password=10218692
+
+https://ws5.pide.gob.pe/Rest/Reniec/Consultar?nuDniConsulta=09817194&nuDniUsuario=10218692&nuRucUsuario=20168999926&password=10218692&out=json
+
+
+
+Curl
+------
+
+Update
+--------
+
+curl -v https://ws5.pide.gob.pe/Rest/Reniec/ActualizarCredencial?credencialAnterior=10218692&credencialNueva=10218692&nuDni=10218692&nuRuc=20168999926
+
+curl -v https://ws5.pide.gob.pe/Rest/Reniec/ActualizarCredencial?credencialAnterior=43465568&credencialNueva=43465568&nuDni=43465568&nuRuc=20168999926
+
+
+
+
+curl -v https://ws5.pide.gob.pe/Rest/Reniec/ActualizarCredencial?credencialAnterior=10218692&credencialNueva=nyctal6+&nuDni=10218692&nuRuc=20168999926
+
+
+
+Request
+---------
+curl -v https://ws5.pide.gob.pe/Rest/Reniec/Consultar?nuDniConsulta=09817194&nuDniUsuario=10218692&nuRucUsuario=20168999926&password=10218692
+
+curl -v https://ws5.pide.gob.pe/Rest/Reniec/Consultar?nuDniConsulta=09817194&nuDniUsuario=10218692&nuRucUsuario=20168999926&password=nyctal6+
+
+
+
+
+
+
+# -----------------------------------------------------------------------------
+#	Interface REST - Libro - AWS
+# -----------------------------------------------------------------------------
+
+curl -v https://ws5.pide.gob.pe/Rest/Reniec/Consultar?nuDniConsulta=09817194&nuDniUsuario=10218692&nuRucUsuario=20168999926&password=10218692
+
+
+
+
+
+
+
+curl -v https://ws5.pide.gob.pe/Rest/Reniec/ActualizarCredencial?credencialAnterior=10218692&credencialNueva=10218692&nuDni=10218692&nuRuc=20168999926
+
+curl -v https://ws1.pide.gob.pe/Rest/Reniec/ActualizarCredencial?credencialAnterior=10218692&credencialNueva=10218692&nuDni=10218692&nuRuc=20168999926
+
+
+
+
+Soap
+------
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.wsdni.segdi.gob.pe/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:actualizarcredencial>
+         <peticionActualizarCredencial>
+            <credencialAnterior>10218692</credencialAnterior>
+            <credencialNueva>10218692</credencialNueva>
+            <nuDni>10218692</nuDni>
+            <nuRuc>20168999926</nuRuc>
+         </peticionActualizarCredencial>
+      </ws:actualizarcredencial>
+   </soapenv:Body>
+</soapenv:Envelope>

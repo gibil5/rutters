@@ -1,10 +1,71 @@
 # -*- coding: utf-8 -*-
 
-POSTGRES
+
+#------------------------------------------------------------------------------
+# 	Postgres
+#------------------------------------------------------------------------------
+
+
+psql epic_alpha_development < epic_beta_production-2019-02-13_00-30-08.sql
+
+
+
+
+Restore
+--------
+psql -U <username> -d <dbname> -1 -f <filename>.sql
+
+psql -U postgres -d epic_alpha_development -1 -f ./epic_alpha_development_dump.sql
+
+psql -U jchavez -d epic_alpha_development -1 -f ./epic_alpha_development_dump.sql
+
+CREATE USER marieth SUPERUSER;
+CREATE USER jchavez SUPERUSER;
+CREATE DATABASE epic_alpha_development OWNER jchavez;
+DROP DATABASE epic_alpha_development;
+
+
+
+
+
+
+Launch
+-------
+pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
+
+
+Connect
 ---------
+psql -p5432 -d "postgres"
 
 
-# PG Database size
+Create user postgres
+-----------------------
+CREATE USER postgres SUPERUSER;
+CREATE DATABASE postgres WITH OWNER postgres;
 
+
+Create
+-------
+CREATE DATABASE municipio_al_dia_development OWNER postgres;
+CREATE DATABASE municipio_al_dia_test OWNER postgres;
+CREATE DATABASE libro_de_reclamaciones_development OWNER postgres;
+CREATE DATABASE libro_de_reclamaciones_test OWNER postgres;
+CREATE DATABASE libro_de_reclamaciones_development_2 OWNER postgres;
+CREATE DATABASE libro_de_reclamaciones_test_2 OWNER postgres;
+CREATE DATABASE epic_alpha_development OWNER postgres;
+
+
+Drop
+-------
+DROP DATABASE epic_alpha_development;
+
+\l
+\q
+
+
+
+PG Database size
+------------------
 psql Restored_17_June_2019 gibil
 SELECT pg_size_pretty( pg_database_size('Restored_17_June_2019') );
